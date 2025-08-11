@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Roland Frontend Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>ROLAND</h2>
+                <span>Frontend és Design</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#about" class="nav-link">RÓLAM</a>
+                <a href="index.html#services" class="nav-link">SZOLGÁLTATÁSOK</a>
+                <a href="index.html#projects" class="nav-link">PROJEKTEK</a>
+                <a href="blog.html" class="nav-link active">BLOG</a>
+                <a href="index.html#contact" class="nav-link">KAPCSOLAT</a>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <div class="section-label">BLOG</div>
+                <h1 class="blog-hero-title">
+                    LATEST <span class="highlight">INSIGHTS</span><br>
+                    & ARTICLES
+                </h1>
+                <p class="blog-hero-description">
+                    Fedezd fel a legújabb webfejlesztési trendeket, tippeket és tapasztalataimat. 
+                    Itt osztom meg a tudásomat és inspirációmat a frontend fejlesztés világából.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-filter">
+                <button class="category-btn active" data-category="all">Összes</button>
+                <button class="category-btn" data-category="javascript">JavaScript</button>
+                <button class="category-btn" data-category="react">React</button>
+                <button class="category-btn" data-category="css">CSS</button>
+                <button class="category-btn" data-category="tips">Tippek</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="posts-grid">
+                <!-- Featured Post -->
+                <article class="post-card featured" data-category="javascript">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="post-category">JavaScript</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 15.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                5 perc olvasás
+                            </span>
+                        </div>
+                        <h2 class="post-title">Modern JavaScript ES2024 Újdonságok</h2>
+                        <p class="post-excerpt">
+                            Fedezd fel a JavaScript legújabb funkcióit és azt, hogyan tehetik még hatékonyabbá a fejlesztési munkádat. Az ES2024 számos izgalmas újdonságot hoz a modern webfejlesztés világába.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">ES2024</span>
+                            <span class="tag">Modern JS</span>
+                            <span class="tag">Frontend</span>
+                        </div>
+                        <a href="javascript-es2024.html" class="read-more">
+                            Tovább olvasom
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Regular Posts -->
+                <article class="post-card" data-category="react">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="post-category">React</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 12.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                3 perc
+                            </span>
+                        </div>
+                        <h3 class="post-title">React Hooks: A Modern Fejlesztés Alapjai</h3>
+                        <p class="post-excerpt">
+                            A React Hooks forradalmasították a modern React fejlesztést. Ebben a részletes útmutatóban megismerkedünk a legfontosabb Hook-okkal és azok gyakorlati alkalmazásával.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Hooks</span>
+                            <span class="tag">useState</span>
+                            <span class="tag">useEffect</span>
+                            <span class="tag">Custom Hooks</span>
+                        </div>
+                        <a href="react-hooks-tutorial.html" class="read-more">
+                            Teljes cikk elolvasása
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="css">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div class="post-category">CSS</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 10.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                4 perc
+                            </span>
+                        </div>
+                        <h3 class="post-title">CSS Grid vs Flexbox: Mikor Mit Használj?</h3>
+                        <p class="post-excerpt">
+                            Részletes összehasonlítás a CSS Grid és Flexbox között, gyakorlati 
+                            példákkal és használati esetekkel.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">CSS</span>
+                            <span class="tag">Layout</span>
+                        </div>
+                        <a href="css-grid-flexbox.html" class="read-more">
+                            Tovább olvasom
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="tips">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="post-category">Tippek</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 8.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                2 perc
+                            </span>
+                        </div>
+                        <h3 class="post-title">5 VS Code Kiegészítő Minden Fejlesztőnek</h3>
+                        <p class="post-excerpt">
+                            A leghasznósabb VS Code extensionök, amelyek jelentősen növelhetik 
+                            a produktivitásodat.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">VS Code</span>
+                            <span class="tag">Produktivitás</span>
+                        </div>
+                        <a href="vscode-extensions.html" class="read-more">
+                            Tovább olvasom
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="javascript">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="post-category">JavaScript</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 5.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                6 perc
+                            </span>
+                        </div>
+                        <h3 class="post-title">Aszinkron JavaScript: Promise vs Async/Await</h3>
+                        <p class="post-excerpt">
+                            Mélyebb betekintés az aszinkron JavaScript programozásba, gyakorlati 
+                            példákkal és legjobb gyakorlatokkal.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Async</span>
+                            <span class="tag">Promise</span>
+                        </div>
+                        <a href="async-javascript.html" class="read-more">
+                            Tovább olvasom
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="post-card" data-category="css">
+                    <div class="post-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="post-category">CSS</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">
+                                <i class="fas fa-calendar"></i>
+                                2025. Jan 3.
+                            </span>
+                            <span class="post-read-time">
+                                <i class="fas fa-clock"></i>
+                                4 perc
+                            </span>
+                        </div>
+                        <h3 class="post-title">Reszponzív Design: Mobile-First Megközelítés</h3>
+                        <p class="post-excerpt">
+                            Hogyan tervezz és fejlessz mobile-first szemlélettel a legjobb 
+                            felhasználói élmény érdekében.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Responsive</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                        <a href="responsive-design.html" class="read-more">
+                            Tovább olvasom
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    További cikkek betöltése
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Iratkozz fel a hírlevelemre!</h2>
+                    <p>Értesülj elsőként az új cikkekről és webfejlesztési tippekről.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email címed..." required>
+                    <button type="submit" class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Feliratkozás
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Roland. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Vissza az oldal tetejére">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="blog.js"></script>
+    
+    <style>
+        /* Back to Top Button - Cyan Theme for Blog */
+        .back-to-top {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            width: 55px !important;
+            height: 55px !important;
+            background: #00d4aa !important;
+            color: #0a0a0a !important;
+            border: 2px solid rgba(0, 212, 170, 0.3) !important;
+            border-radius: 50% !important;
+            cursor: pointer !important;
+            font-size: 1.3rem !important;
+            font-weight: bold !important;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            z-index: 1000 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(30px) scale(0.8) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        .back-to-top.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) scale(1) !important;
+            animation: backToTopPulse 0.6s ease-out !important;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.15) !important;
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.6) !important;
+            background: #00bfa5 !important;
+            border-color: rgba(0, 212, 170, 0.6) !important;
+        }
+        
+        .back-to-top:active {
+            transform: translateY(-4px) scale(1.1) !important;
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.5) !important;
+        }
+        
+        @keyframes backToTopPulse {
+            0% {
+                transform: translateY(30px) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-5px) scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 25px !important;
+                right: 25px !important;
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.1rem !important;
+            }
+        }
+    </style>
+    
+    <script>
+        // Back to Top Button functionality for blog page
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            // Show/hide button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            // Smooth scroll to top when clicked
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Hooks: A Modern Fejlesztés Alapjai - Roland Blog</title>
+    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Article specific styles */
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .article-tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .article-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .article-content h2 {
+            color: var(--accent-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .article-content h3 {
+            color: var(--text-primary);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.3rem;
+        }
+        
+        .article-content code {
+            background: var(--secondary-bg);
+            padding: 15px;
+            display: block;
+            border-radius: 8px;
+            color: var(--accent-color);
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .article-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .back-to-blog {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-blog:hover {
+            gap: 1rem;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 212, 170, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h2>ROLAND</h2>
+                <span>Frontend és Design</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#about" class="nav-link">RÓLAM</a>
+                <a href="index.html#services" class="nav-link">SZOLGÁLTATÁSOK</a>
+                <a href="index.html#projects" class="nav-link">PROJEKTEK</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="index.html#contact" class="nav-link">KAPCSOLAT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="article-container" style="margin-top: 120px;">
+        <a href="blog.html" class="back-to-blog">
+            <i class="fas fa-arrow-left"></i>
+            Vissza a bloghoz
+        </a>
+        
+        <article>
+            <header class="article-header">
+                <h1 class="article-title">React Hooks: A Modern Fejlesztés Alapjai</h1>
+                <div class="article-meta">
+                    <span>
+                        <i class="fas fa-calendar"></i>
+                        2025. Jan 12.
+                    </span>
+                    <span>
+                        <i class="fas fa-clock"></i>
+                        8 perc olvasás
+                    </span>
+                    <span>
+                        <i class="fas fa-user"></i>
+                        Roland
+                    </span>
+                </div>
+                <div class="article-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Hooks</span>
+                    <span class="tag">useState</span>
+                    <span class="tag">useEffect</span>
+                    <span class="tag">Custom Hooks</span>
+                </div>
+            </header>
+            
+            <div class="article-content">
+                <h2>🚀 Bevezetés a React Hooks világába</h2>
+                
+                <p>A React Hooks forradalmasították a modern React fejlesztést. A React 16.8 verziójában bevezetett Hooks lehetővé teszik, hogy funkcionális komponensekben is használhassuk a state-et és más React funkciókat, anélkül hogy class komponenseket kellene írnunk.</p>
+                
+                <div class="highlight-box">
+                    <strong>🎯 Mit fogsz megtanulni ebben a cikkben:</strong>
+                    <ul>
+                        <li>useState és useEffect Hook-ok alapjai</li>
+                        <li>Custom Hook-ok készítése</li>
+                        <li>Performance optimalizálási technikák</li>
+                        <li>Gyakori hibák elkerülése</li>
+                        <li>Best practice-ek és pro tippek</li>
+                    </ul>
+                </div>
+
+                <h2>1. useState Hook - State Kezelés Funkcionális Komponensekben</h2>
+                
+                <p>A <code>useState</code> a leggyakrabban használt Hook, amely lehetővé teszi a state kezelését funkcionális komponensekben. Egyszerű és intuitív használata miatt ideális kezdőknek és haladóknak egyaránt.</p>
+                
+                <h3>Alapvető használat:</h3>
+                <code>import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Számláló: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Növelés
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code>
+
+                <h2>2. useEffect Hook - Side Effect-ek Kezelése</h2>
+                
+                <p>Az <code>useEffect</code> Hook segítségével side effect-eket kezelhetünk, mint például API hívások, DOM manipuláció, vagy feliratkozások. Ez helyettesíti a class komponensek <code>componentDidMount</code>, <code>componentDidUpdate</code> és <code>componentWillUnmount</code> lifecycle metódusait.</p>
+
+                <h3>Példa API hívásra:</h3>
+                <code>import React, { useState, useEffect } from 'react';
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    const fetchUser = async () =&gt; {
+      setLoading(true);
+      try {
+        const response = await fetch(`/api/users/${userId}`);
+        const userData = await response.json();
+        setUser(userData);
+      } catch (error) {
+        console.error('Hiba a felhasználó betöltésekor:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [userId]); // Dependency array - csak userId változásakor fut újra
+
+  if (loading) return &lt;div&gt;Betöltés...&lt;/div&gt;;
+  if (!user) return &lt;div&gt;Felhasználó nem található&lt;/div&gt;;
+
+  return &lt;div&gt;Üdv, {user.name}!&lt;/div&gt;;
+}</code>
+
+                <h2>3. Custom Hook-ok - Logika Újrafelhasználása</h2>
+                
+                <p>A Custom Hook-ok lehetővé teszik, hogy a komponensek közötti logikát újrafelhasználható módon szervezzük ki. Egy custom hook egyszerűen egy JavaScript függvény, amely más Hook-okat használ.</p>
+
+                <h3>useApi Custom Hook példa:</h3>
+                <code>import { useState, useEffect } from 'react';
+
+function useApi(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [url]);
+
+  return { data, loading, error };
+}
+
+// Használat:
+function ProductList() {
+  const { data: products, loading, error } = useApi('/api/products');
+
+  if (loading) return &lt;div&gt;Betöltés...&lt;/div&gt;;
+  if (error) return &lt;div&gt;Hiba: {error}&lt;/div&gt;;
+
+  return (
+    &lt;ul&gt;
+      {products.map(product =&gt; (
+        &lt;li key={product.id}&gt;{product.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</code>
+
+                <h2>4. Performance Optimalizálás</h2>
+                
+                <p>A React Hook-ok használatakor fontos figyelni a performance-ra. Itt néhány hasznos technika:</p>
+
+                <h3>useMemo és useCallback:</h3>
+                <code>import React, { useMemo, useCallback } from 'react';
+
+function ExpensiveComponent({ items, onItemClick }) {
+  // Költséges számítás memoizálása
+  const expensiveValue = useMemo(() =&gt; {
+    return items.reduce((sum, item) =&gt; sum + item.value, 0);
+  }, [items]);
+
+  // Callback függvény memoizálása
+  const handleClick = useCallback((id) =&gt; {
+    onItemClick(id);
+  }, [onItemClick]);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Összeg: {expensiveValue}&lt;/p&gt;
+      {items.map(item =&gt; (
+        &lt;button key={item.id} onClick={() =&gt; handleClick(item.id)}&gt;
+          {item.name}
+        &lt;/button&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}</code>
+
+                <div class="highlight-box">
+                    <h3>💡 Pro Tippek és Best Practice-ek:</h3>
+                    <ul>
+                        <li><strong>Dependency Array:</strong> Mindig használj dependency array-t useEffect-nél, hogy elkerüld a végtelen loop-okat</li>
+                        <li><strong>State Struktura:</strong> Kerüld a túl sok useState használatát - használj useReducer-t komplex state-nél</li>
+                        <li><strong>Custom Hook-ok:</strong> Szervezd ki az újrafelhasználható logikát custom hook-okba</li>
+                        <li><strong>Cleanup:</strong> Ne felejtsd el a cleanup függvényeket useEffect-ben (pl. event listener-ek eltávolítása)</li>
+                        <li><strong>React DevTools:</strong> Használd a React DevTools-t a Hook-ok debug-olásához</li>
+                        <li><strong>ESLint Plugin:</strong> Telepítsd az eslint-plugin-react-hooks-ot a Hook szabályok betartásához</li>
+                    </ul>
+                </div>
+
+                <h2>5. Gyakori Hibák és Megoldásaik</h2>
+
+                <h3>❌ Helytelen dependency array:</h3>
+                <code>// Rossz - végtelen loop
+useEffect(() =&gt; {
+  setCount(count + 1);
+}, [count]);
+
+// Jó - functional update használata
+useEffect(() =&gt; {
+  setCount(prevCount =&gt; prevCount + 1);
+}, []);</code>
+
+                <h3>❌ Missing cleanup:</h3>
+                <code>// Rossz - memory leak
+useEffect(() =&gt; {
+  const interval = setInterval(() =&gt; {
+    console.log('Timer tick');
+  }, 1000);
+}, []);
+
+// Jó - cleanup függvénnyel
+useEffect(() =&gt; {
+  const interval = setInterval(() =&gt; {
+    console.log('Timer tick');
+  }, 1000);
+
+  return () =&gt; clearInterval(interval);
+}, []);</code>
+
+                <h2>🎯 Következtetés</h2>
+                
+                <p>A React Hooks modern, tiszta és hatékony kódot tesznek lehetővé. Ezekkel az alapokkal már készíthetsz professzionális React alkalmazásokat, amelyek könnyen karbantarthatók és skálázhatók.</p>
+                
+                <p>A Hook-ok használata eleinte kihívást jelenthet, de a gyakorlással természetessé válik. Kezdj egyszerű példákkal, és fokozatosan haladj a komplexebb use case-ek felé.</p>
+
+                <div class="highlight-box">
+                    <p><strong>További tanuláshoz ajánlott források:</strong></p>
+                    <ul>
+                        <li>React hivatalos dokumentáció</li>
+                        <li>React DevTools böngésző kiegészítő</li>
+                        <li>ESLint plugin a Hook szabályok betartásához</li>
+                        <li>Online gyakorló projektek és kód példák</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Roland. Minden jog fenntartva.</p>
+        </div>
+    </footer>
+</body>
+</html>
