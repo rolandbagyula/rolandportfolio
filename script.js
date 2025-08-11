@@ -110,15 +110,7 @@ document.querySelector('.cta-button').addEventListener('click', function(e) {
     });
 });
 
-// Mobile menu functionality (for future implementation)
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const nav = document.querySelector('.nav');
-
-mobileMenuBtn.addEventListener('click', function() {
-    nav.classList.toggle('active');
-    this.querySelector('i').classList.toggle('fa-bars');
-    this.querySelector('i').classList.toggle('fa-times');
-});
+// Mobile menu functionality - REMOVED (handled by inline JS in HTML)
 
 // Typing effect for hero title
 function typeWriter(element, text, speed = 100) {
