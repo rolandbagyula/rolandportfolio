@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Roland Portfolio - Webfejleszto</title>
-    <link rel="stylesheet" href="styles.css?v=1.4">
+    <link rel="stylesheet" href="styles.css?v=1.6">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -289,47 +289,283 @@
             color: #00bfa5 !important;
         }
         
-        /* Mobile Navigation */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
+        /* Mobile Navigation - Enhanced Specificity */
+        @media screen and (max-width: 768px) {
+            .header .mobile-menu-btn {
                 display: block !important;
             }
             
-            .nav {
+            .header .container .nav {
                 position: fixed !important;
-                top: 70px !important;
+                top: 80px !important;
                 left: -100% !important;
-                width: 100% !important;
-                height: calc(100vh - 70px) !important;
-                background: rgba(10, 10, 10, 0.98) !important;
-                backdrop-filter: blur(10px) !important;
+                width: 100vw !important;
+                height: calc(100vh - 80px) !important;
+                background: rgba(10, 10, 10, 0.95) !important;
+                backdrop-filter: blur(15px) !important;
+                display: flex !important;
                 flex-direction: column !important;
                 justify-content: flex-start !important;
                 align-items: center !important;
-                padding-top: 2rem !important;
-                transition: left 0.3s ease !important;
-                z-index: 999 !important;
+                padding-top: 3rem !important;
+                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                z-index: 9999 !important;
+                border-left: 3px solid #00d4aa !important;
             }
             
-            .nav.active {
+            .header .container .nav.active {
                 left: 0 !important;
+                transform: translateX(0) !important;
             }
             
-            .nav-link {
+            .header .container .nav .nav-link {
                 display: block !important;
-                padding: 1rem 2rem !important;
-                margin: 0.5rem 0 !important;
-                font-size: 1.2rem !important;
+                padding: 1.5rem 2rem !important;
+                margin: 0.8rem 0 !important;
+                font-size: 1.3rem !important;
+                font-weight: 500 !important;
                 text-align: center !important;
-                width: 80% !important;
-                border-radius: 10px !important;
+                width: 85% !important;
+                border-radius: 12px !important;
                 transition: all 0.3s ease !important;
+                color: #ffffff !important;
+                text-decoration: none !important;
+                border: 1px solid transparent !important;
             }
             
-            .nav-link:hover {
-                background: rgba(0, 212, 170, 0.1) !important;
+            .header .container .nav .nav-link:hover {
+                background: rgba(0, 212, 170, 0.15) !important;
                 color: #00d4aa !important;
-                transform: translateX(10px) !important;
+                transform: translateX(15px) scale(1.02) !important;
+                border-color: rgba(0, 212, 170, 0.3) !important;
+                box-shadow: 0 4px 15px rgba(0, 212, 170, 0.2) !important;
+            }
+            
+            /* Hide desktop nav on mobile */
+            .header .container .nav:not(.active) {
+                display: none !important;
+            }
+            
+            .header .container .nav.active {
+                display: flex !important;
+            }
+        }
+        
+        /* Contact Section Styles */
+        .contact {
+            padding: 6rem 0 !important;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+            position: relative !important;
+        }
+        
+        .contact::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 212, 170, 0.1) 0%, transparent 50%) !important;
+            pointer-events: none !important;
+        }
+        
+        .contact-content {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 4rem !important;
+            align-items: start !important;
+        }
+        
+        .contact-info .section-label {
+            color: #00d4aa !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .contact-info .section-title {
+            font-size: 2.5rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 1.5rem !important;
+            color: #ffffff !important;
+        }
+        
+        .contact-info .highlight {
+            color: #00d4aa !important;
+        }
+        
+        .contact-description {
+            font-size: 1.1rem !important;
+            line-height: 1.8 !important;
+            color: #cccccc !important;
+            margin-bottom: 3rem !important;
+        }
+        
+        .contact-details {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+        }
+        
+        .contact-item {
+            display: flex !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+            padding: 1.5rem !important;
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-radius: 15px !important;
+            border: 1px solid rgba(0, 212, 170, 0.2) !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .contact-item:hover {
+            background: rgba(0, 212, 170, 0.1) !important;
+            border-color: rgba(0, 212, 170, 0.4) !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.2) !important;
+        }
+        
+        .contact-icon {
+            width: 50px !important;
+            height: 50px !important;
+            background: linear-gradient(45deg, #00d4aa, #00bfa5) !important;
+            border-radius: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.2rem !important;
+            color: #0a0a0a !important;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3) !important;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            color: #ffffff !important;
+            margin-bottom: 0.5rem !important;
+        }
+        
+        .contact-text p {
+            color: #cccccc !important;
+            font-size: 1rem !important;
+        }
+        
+        /* Contact Form Styles */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05) !important;
+            padding: 3rem !important;
+            border-radius: 20px !important;
+            border: 1px solid rgba(0, 212, 170, 0.2) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem !important;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100% !important;
+            padding: 1.2rem 1.5rem !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 2px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 12px !important;
+            color: #ffffff !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 1rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none !important;
+            border-color: #00d4aa !important;
+            background: rgba(0, 212, 170, 0.1) !important;
+            box-shadow: 0 0 20px rgba(0, 212, 170, 0.2) !important;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888888 !important;
+        }
+        
+        /* Modern Submit Button - Enhanced Specificity */
+        .contact-form .modern-submit-btn,
+        button.submit-btn.modern-submit-btn {
+            width: 100% !important;
+            padding: 1.4rem 2.5rem !important;
+            background: linear-gradient(45deg, #00d4aa, #00bfa5) !important;
+            color: #0a0a0a !important;
+            border: 2px solid transparent !important;
+            border-radius: 15px !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            cursor: pointer !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 10px 35px rgba(0, 212, 170, 0.5) !important;
+            position: relative !important;
+            overflow: hidden !important;
+            margin-top: 1rem !important;
+        }
+        
+        .contact-form .modern-submit-btn::before,
+        button.submit-btn.modern-submit-btn::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent) !important;
+            transition: left 0.6s ease !important;
+        }
+        
+        .contact-form .modern-submit-btn:hover::before,
+        button.submit-btn.modern-submit-btn:hover::before {
+            left: 100% !important;
+        }
+        
+        .contact-form .modern-submit-btn:hover,
+        button.submit-btn.modern-submit-btn:hover {
+            transform: translateY(-6px) scale(1.05) !important;
+            box-shadow: 0 20px 50px rgba(0, 212, 170, 0.7) !important;
+            background: linear-gradient(45deg, #00bfa5, #00d4aa) !important;
+            border-color: rgba(0, 212, 170, 0.4) !important;
+        }
+        
+        .contact-form .modern-submit-btn:active,
+        button.submit-btn.modern-submit-btn:active {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 15px 30px rgba(0, 212, 170, 0.6) !important;
+        }
+        
+        .contact-form .modern-submit-btn:focus,
+        button.submit-btn.modern-submit-btn:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.4), 0 20px 50px rgba(0, 212, 170, 0.7) !important;
+        }
+        
+        /* Contact Responsive */
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr !important;
+                gap: 3rem !important;
+            }
+            
+            .contact-info .section-title {
+                font-size: 2rem !important;
+            }
+            
+            .contact-form {
+                padding: 2rem !important;
+            }
+            
+            .contact-item {
+                padding: 1.2rem !important;
             }
         }
         
@@ -383,11 +619,17 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
                     
-                    // Close mobile menu
-                    nav.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    // Close mobile menu if it's open
+                    if (nav && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        if (mobileMenuBtn) {
+                            const icon = mobileMenuBtn.querySelector('i');
+                            if (icon) {
+                                icon.classList.remove('fa-times');
+                                icon.classList.add('fa-bars');
+                            }
+                        }
+                    }
                     
                     // Skip external links (like blog.html)
                     if (href.startsWith('#')) {
@@ -414,6 +656,32 @@
                     icon.classList.add('fa-bars');
                 }
             });
+            
+            // Modern Submit Button Hover Effects
+            const submitBtn = document.querySelector('.modern-submit-btn');
+            if (submitBtn) {
+                submitBtn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-6px) scale(1.05)';
+                    this.style.boxShadow = '0 20px 50px rgba(0, 212, 170, 0.7)';
+                    this.style.background = 'linear-gradient(45deg, #00bfa5, #00d4aa)';
+                });
+                
+                submitBtn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                    this.style.boxShadow = '0 10px 35px rgba(0, 212, 170, 0.5)';
+                    this.style.background = 'linear-gradient(45deg, #00d4aa, #00bfa5)';
+                });
+                
+                submitBtn.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 212, 170, 0.6)';
+                });
+                
+                submitBtn.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-6px) scale(1.05)';
+                    this.style.boxShadow = '0 20px 50px rgba(0, 212, 170, 0.7)';
+                });
+            }
         });
     </script>
 </head>
@@ -775,7 +1043,32 @@
                         <div class="form-group">
                             <textarea placeholder="Üzeneted" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">ÜZENET KÜLDÉSE</button>
+                        <div style="
+                            width: 100%;
+                            padding: 1.5rem 2.5rem;
+                            background: linear-gradient(45deg, #00d4aa, #00bfa5);
+                            color: #0a0a0a;
+                            border: none;
+                            border-radius: 15px;
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 1.1rem;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            cursor: pointer;
+                            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                            box-shadow: 0 10px 35px rgba(0, 212, 170, 0.5);
+                            margin-top: 1rem;
+                            text-align: center;
+                            user-select: none;
+                        " 
+                        onclick="alert('Űrlap elküldve! (Demo verzió)')"
+                        onmouseover="this.style.transform='translateY(-6px) scale(1.05)'; this.style.boxShadow='0 20px 50px rgba(0, 212, 170, 0.7)'; this.style.background='linear-gradient(45deg, #00bfa5, #00d4aa)';"
+                        onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 10px 35px rgba(0, 212, 170, 0.5)'; this.style.background='linear-gradient(45deg, #00d4aa, #00bfa5)';"
+                        onmousedown="this.style.transform='translateY(-3px) scale(1.02)';"
+                        onmouseup="this.style.transform='translateY(-6px) scale(1.05)';">
+                            ÜZENET KÜLDÉSE
+                        </div>
                     </form>
                 </div>
             </div>
@@ -794,6 +1087,6 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="script.js?v=1.4"></script>
+    <script src="script.js?v=1.5"></script>
 </body>
 </html>
