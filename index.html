@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Roland Portfolio - Webfejleszto</title>
-    <link rel="stylesheet" href="styles.css?v=1.6">
+    <link rel="stylesheet" href="styles.css?v=1.7">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -361,24 +361,32 @@
         @media screen and (max-width: 768px) {
             .header .mobile-menu-btn {
                 display: block !important;
+                color: #ffffff !important;
+                font-size: 1.5rem !important;
+                cursor: pointer !important;
+                z-index: 1001 !important;
+                transition: color 0.3s ease !important;
+            }
+            
+            .header .mobile-menu-btn:hover {
+                color: #00d4aa !important;
             }
             
             .header .container .nav {
                 position: fixed !important;
                 top: 70px !important;
                 left: -100% !important;
-                width: 100vw !important;
+                width: 100% !important;
                 height: calc(100vh - 70px) !important;
-                background: rgba(10, 10, 10, 0.95) !important;
-                backdrop-filter: blur(15px) !important;
-                display: flex !important;
+                background: rgba(26, 26, 26, 0.98) !important;
+                backdrop-filter: blur(20px) !important;
                 flex-direction: column !important;
-                justify-content: center !important;
+                justify-content: flex-start !important;
                 align-items: center !important;
-                padding: 1rem 0 !important;
-                transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-                z-index: 9999 !important;
-                border-left: 3px solid #00d4aa !important;
+                padding-top: 3rem !important;
+                gap: 2rem !important;
+                transition: all 0.3s ease !important;
+                z-index: 999 !important;
                 overflow-y: auto !important;
             }
             
@@ -695,15 +703,19 @@
                     nav.classList.toggle('active');
                     
                     // Change hamburger icon to X when open
-                    const icon = this.querySelector('i');
+                    const spans = this.querySelectorAll('span');
                     if (nav.classList.contains('active')) {
                         console.log('Menu opened'); // Debug
-                        icon.classList.remove('fa-bars');
-                        icon.classList.add('fa-times');
+                        // Transform to X
+                        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
                     } else {
                         console.log('Menu closed'); // Debug
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
+                        // Transform back to hamburger
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
                     }
                 });
             } else {
@@ -800,7 +812,9 @@
                 <a href="#contact" class="nav-link">KAPCSOLAT</a>
             </nav>
             <div class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
+                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
             </div>
         </div>
     </header>
@@ -1144,6 +1158,6 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script src="script.js?v=1.5"></script>
+    <script src="script.js?v=1.6"></script>
 </body>
 </html>
