@@ -9,8 +9,13 @@
     <title>Roland Portfolio - Webfejleszto</title>
     <link rel="stylesheet" href="styles.css?v=1.6">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Global font family - Inter for minimal design */
+        * {
+            font-family: 'Inter', sans-serif !important;
+        }
+        
         /* Fade-in + Scale Animation for KREATÍV - INLINE VERSION */
         .highlight-fade {
             color: #00d4aa !important;
@@ -48,6 +53,7 @@
             transition: all 0.3s ease !important;
             text-transform: uppercase !important;
             letter-spacing: 1px !important;
+            text-decoration: none !important;
         }
         
         .cta-button:hover {
@@ -237,6 +243,20 @@
             font-size: 1.5rem !important;
             font-weight: 700 !important;
             color: #ffffff !important;
+        }
+        
+        .logo-white, .logo-cyan {
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            font-family: inherit !important;
+        }
+        
+        .logo-white {
+            color: #ffffff !important;
+        }
+        
+        .logo-cyan {
+            color: #00d4aa !important;
         }
         
         .logo-text span {
@@ -628,6 +648,32 @@
                 height: 50px !important;
                 font-size: 1.1rem !important;
             }
+            
+            /* Hero section mobile fix */
+            .hero {
+                min-height: 100vh !important;
+                padding: 2rem 0 !important;
+                position: relative !important;
+                overflow: hidden !important;
+            }
+            
+            .hero-content {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 2rem !important;
+            }
+            
+            .hero-image {
+                position: relative !important;
+                max-width: 200px !important;
+                margin: 0 auto !important;
+                z-index: 1 !important;
+            }
+            
+            .hero-text {
+                position: relative !important;
+                z-index: 2 !important;
+            }
         }
     </style>
     
@@ -740,9 +786,8 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="headerikon.jpg" alt="Roland Logo" class="logo-image">
                 <div class="logo-text">
-                    <h2>ROLAND</h2>
+                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
                     <span>Frontend és Design</span>
                 </div>
             </div>
@@ -765,21 +810,18 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="hero-label">FRONTEND DEVELOPER</div>
                     <h1 class="hero-title">
                         A TE <span class="highlight-fade">KREATÍV</span><br>
                         FEJLESZTŐD
                     </h1>
                     <p class="hero-description">
-                        Modern és reszponzív weboldalakat készítek a legújabb technológiákkal. 
-                        Szakértelmem HTML, CSS, JavaScript és React területén segít megvalósítani 
-                        az elképzeléseidet.
+                        Modern, egyedi és reszponzív oldalakat készítek. Felesleges beszéd helyett nézd meg magad!
                     </p>
                     <a href="#projects" class="cta-button">PROJEKTEK MEGTEKINTÉSE</a>
                 </div>
                 <div class="hero-image">
                     <div class="image-placeholder">
-                        <i class="fas fa-code"></i>
+                        &lt;/&gt;
                     </div>
                 </div>
             </div>
@@ -797,11 +839,11 @@
                 </div>
                 <div class="about-text">
                     <div class="section-label">RÓLAM</div>
-                    <h2 class="section-title">WHO ARE <span class="highlight">WE?</span></h2>
+                    <h2 class="section-title">KI <span class="highlight">VAGYOK?</span></h2>
                     <p class="about-description">
-                        Szenvedélyes frontend fejlesztő vagyok, aki szereti a kihívásokat és 
-                        a kreatív megoldásokat. Több éves tapasztalattal rendelkezem modern 
-                        webtechnológiák területén.
+                        Kreatív frontend fejlesztő vagyok, aki a modern webtechnológiákkal 
+                        egyedi és funkcional oldalakat készít. Minden projektet szenvedéllyel 
+                        és precizitással valósítok meg.
                     </p>
                     
                     <div class="skills">
@@ -811,7 +853,7 @@
                             </div>
                             <div class="skill-content">
                                 <h4>Clean Code</h4>
-                                <p>Tiszta és karbantartható kód írása.</p>
+                                <p>Tiszta, optimalizált és jól dokumentált kód.</p>
                             </div>
                         </div>
                         
@@ -821,7 +863,7 @@
                             </div>
                             <div class="skill-content">
                                 <h4>Modern Design</h4>
-                                <p>Korszerű és vonzó designok készítése.</p>
+                                <p>Modern, reszponzív és felhasználóbarát design.</p>
                             </div>
                         </div>
                     </div>
@@ -835,13 +877,13 @@
         <div class="container">
             <div class="services-header">
                 <div class="section-label">SZOLGÁLTATÁSAIM</div>
-                <h2 class="section-title">WHAT WE <span class="highlight">DO?</span></h2>
+                <h2 class="section-title">MIT <span class="highlight">CSINÁLOK?</span></h2>
                 <p class="section-description">
                     Professzionális webfejlesztési szolgáltatásokat nyújtok, amelyek segítenek 
                     megvalósítani a digitális álmaidat. Modern technológiákkal és kreatív 
                     megoldásokkal dolgozom.
                 </p>
-                <a href="#projects" class="view-all-btn">VIEW ALL</a>
+                <a href="#projects" class="cta-button">ÖSSZES MEGTEKINTÉSE</a>
             </div>
             
             <div class="services-grid">
@@ -849,7 +891,7 @@
                     <div class="service-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Website Design</h3>
+                    <h3>Weboldal Tervezés</h3>
                     <p>Modern és reszponzív weboldalak tervezése és fejlesztése.</p>
                 </div>
                 
@@ -857,7 +899,7 @@
                     <div class="service-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile & Desktop App</h3>
+                    <h3>Mobil & Asztali App</h3>
                     <p>Reszponzív alkalmazások minden eszközre optimalizálva.</p>
                 </div>
                 
@@ -865,7 +907,7 @@
                     <div class="service-icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <h3>UI & UX Design</h3>
+                    <h3>UI & UX Tervezés</h3>
                     <p>Felhasználóbarát interfészek és élmények tervezése.</p>
                 </div>
                 
@@ -873,58 +915,20 @@
                     <div class="service-icon">
                         <i class="fas fa-camera"></i>
                     </div>
-                    <h3>Editing Photo</h3>
+                    <h3>Képszerkesztés</h3>
                     <p>Professzionális képszerkesztés és grafikai munkák.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">PROJECT</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">PLEASURE</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="stat-number">100+</div>
-                    <div class="stat-label">CUSTOMER</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">TEAM MEMBERS</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">PROJEKTEK</div>
-                <h2 class="section-title">LATEST <span class="highlight">WORKS</span></h2>
+                <h2 class="section-title">LEGUTÓBBI <span class="highlight">MUNKÁK</span></h2>
                 <p class="section-description">
                     Íme néhány projekt, amelyeken dolgoztam. Minden projekt egyedi kihívásokat 
                     és kreatív megoldásokat tartalmaz.
@@ -937,7 +941,7 @@
                         <div class="image-placeholder">
                             <i class="fas fa-globe"></i>
                         </div>
-                        <div class="post-category">Web Development</div>
+                        <div class="post-category">Webfejlesztés</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
@@ -947,10 +951,10 @@
                             </span>
                             <span class="post-read-time">
                                 <i class="fas fa-eye"></i>
-                                Live Demo
+                                Élő Demo
                             </span>
                         </div>
-                        <h3 class="post-title">E-commerce Website</h3>
+                        <h3 class="post-title">E-kereskedelmi Weboldal</h3>
                         <p class="post-excerpt">
                             Modern online áruház React és Node.js technológiákkal. Teljes körű e-kereskedelmi megoldás modern design-nal és optimalizált UX-szel.
                         </p>
@@ -971,7 +975,7 @@
                         <div class="image-placeholder">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <div class="post-category">Mobile App</div>
+                        <div class="post-category">Mobil App</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
@@ -981,10 +985,10 @@
                             </span>
                             <span class="post-read-time">
                                 <i class="fas fa-eye"></i>
-                                Live Demo
+                                Élő Demo
                             </span>
                         </div>
-                        <h3 class="post-title">Mobile App UI</h3>
+                        <h3 class="post-title">Mobil App UI</h3>
                         <p class="post-excerpt">
                             Reszponzív mobilalkalmazás design és fejlesztés. Cross-platform megoldás modern UI komponensekkel és smooth animációkkal.
                         </p>
@@ -1005,7 +1009,7 @@
                         <div class="image-placeholder">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <div class="post-category">Dashboard</div>
+                        <div class="post-category">Irányítópult</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
@@ -1015,10 +1019,10 @@
                             </span>
                             <span class="post-read-time">
                                 <i class="fas fa-eye"></i>
-                                Live Demo
+                                Élő Demo
                             </span>
                         </div>
-                        <h3 class="post-title">Dashboard Analytics</h3>
+                        <h3 class="post-title">Analitikai Irányítópult</h3>
                         <p class="post-excerpt">
                             Interaktív adatvizualizációs dashboard üzleti célokra. Real-time adatok, modern chartok és intuitív felhasználói felület.
                         </p>
@@ -1043,7 +1047,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="section-label">KAPCSOLAT</div>
-                    <h2 class="section-title">GET IN <span class="highlight">TOUCH</span></h2>
+                    <h2 class="section-title">VEDD FEL A <span class="highlight">KAPCSOLATOT</span></h2>
                     <p class="contact-description">
                         Van egy projekted? Keress bátran! Szívesen segítek megvalósítani 
                         a digitális álmaidat.

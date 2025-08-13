@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Roland Frontend Developer</title>
+    <title>Blog - RNDev Frontend Fejlesztő</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Global font family - Inter for minimal design */
+        * {
+            font-family: 'Inter', sans-serif !important;
+        }
+        
         /* Logo styling for blog */
         .logo {
             display: flex !important;
@@ -41,6 +46,20 @@
             font-weight: 400 !important;
         }
         
+        .logo-white, .logo-cyan {
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            font-family: inherit !important;
+        }
+        
+        .logo-white {
+            color: #ffffff !important;
+        }
+        
+        .logo-cyan {
+            color: #00d4aa !important;
+        }
+        
         @media (max-width: 768px) {
             .logo-text h2 {
                 font-size: 1.3rem !important;
@@ -62,9 +81,8 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="headerikon.jpg" alt="Roland Logo" class="logo-image">
                 <div class="logo-text">
-                    <h2>ROLAND</h2>
+                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
                     <span>Frontend és Design</span>
                 </div>
             </div>
@@ -88,8 +106,8 @@
             <div class="blog-hero-content">
                 <div class="section-label">BLOG</div>
                 <h1 class="blog-hero-title">
-                    LATEST <span class="highlight">INSIGHTS</span><br>
-                    & ARTICLES
+                    LEGFRISSEBB <span class="highlight">GONDOLATOK</span><br>
+                    ÉS CIKKEK
                 </h1>
                 <p class="blog-hero-description">
                     Fedezd fel a legújabb webfejlesztési trendeket, tippeket és tapasztalataimat. 
@@ -357,7 +375,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Roland. Minden jog fenntartva.</p>
+            <p>&copy; 2025 RNDev. Minden jog fenntartva.</p>
         </div>
     </footer>
 
