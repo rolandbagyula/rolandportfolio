@@ -227,9 +227,9 @@
         }
         
         .header-image {
-            height: 40px !important;
-            width: auto !important;
-            border-radius: 8px !important;
+            height: 28px !important;
+            width: 28px !important;
+            border-radius: 50% !important;
             transition: all 0.3s ease !important;
             object-fit: cover !important;
         }
@@ -275,7 +275,7 @@
                 font-size: 0.7rem !important;
             }
             
-            .logo-image {
+            .header-image {
                 width: 24px !important;
                 height: 24px !important;
             }
@@ -794,34 +794,12 @@
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const nav = document.querySelector('.nav');
             
-            console.log('Mobile menu elements:', { mobileMenuBtn, nav }); // Debug
-            
             // Mobile menu toggle
             if (mobileMenuBtn && nav) {
-                console.log('Mobile menu initialized successfully'); // Debug
                 mobileMenuBtn.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log('Mobile menu button clicked'); // Debug
                     nav.classList.toggle('active');
-                    
-                    // Change hamburger icon to X when open
-                    const spans = this.querySelectorAll('span');
-                    if (nav.classList.contains('active')) {
-                        console.log('Menu opened'); // Debug
-                        // Transform to X
-                        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                        spans[1].style.opacity = '0';
-                        spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-                    } else {
-                        console.log('Menu closed'); // Debug
-                        // Transform back to hamburger
-                        spans[0].style.transform = 'none';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'none';
-                    }
                 });
-            } else {
-                console.error('Mobile menu elements not found!'); // Debug
             }
             
             // Close mobile menu when clicking on a link
@@ -832,12 +810,6 @@
                     // Close mobile menu if it's open
                     if (nav && nav.classList.contains('active')) {
                         nav.classList.remove('active');
-                        if (mobileMenuBtn) {
-                            const icon = mobileMenuBtn.querySelector('i');
-                            if (icon) {
-                                // Flaticon icons don't need class toggling
-                            }
-                        }
                     }
                     
                     // Skip external links (like blog.html)
@@ -860,8 +832,6 @@
             document.addEventListener('click', function(e) {
                 if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     nav.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    // Flaticon icons don't need class toggling
                 }
             });
             
@@ -917,9 +887,7 @@
                 <a href="#contact" class="nav-link">KAPCSOLAT</a>
             </nav>
             <div class="mobile-menu-btn">
-                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
-                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
-                <span style="display: block; width: 25px; height: 3px; background: currentColor; margin: 5px 0; transition: 0.3s;"></span>
+                <i class="fi fi-rr-menu-burger"></i>
             </div>
         </div>
     </header>

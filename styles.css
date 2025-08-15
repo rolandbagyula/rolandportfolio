@@ -517,29 +517,6 @@ html {
     background: var(--accent-hover);
 }
 
-/* Fade-in + Scale Animation for KREATÍV */
-.highlight-fade {
-    color: var(--accent-color);
-    font-weight: var(--font-weight-bold);
-    display: inline-block;
-    animation: fadeInScale 2s ease-out 1s both;
-}
-
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 /* Blog Specific Styles */
 .nav-link.active {
     color: var(--accent-color);
@@ -899,25 +876,3 @@ html {
     }
 }
 
-/* Fade-in + Scale Animation for KREATÍV */
-.highlight-fade {
-    color: var(--accent-color);
-    font-weight: var(--font-weight-bold);
-    display: inline-block;
-    animation: fadeInScale 2s ease-out 1s both;
-}
-
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    50% {
-        opacity: 0.5;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}

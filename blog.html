@@ -21,7 +21,7 @@
             gap: 0.8rem !important;
         }
         
-        .logo-image {
+        .header-image {
             width: 28px !important;
             height: 28px !important;
             border-radius: 50% !important;
@@ -29,8 +29,8 @@
             object-fit: cover !important;
         }
         
-        .logo-image:hover {
-            transform: scale(1.15) rotate(5deg) !important;
+        .header-image:hover {
+            transform: scale(1.05) !important;
             box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4) !important;
         }
         
@@ -70,7 +70,7 @@
                 font-size: 0.7rem !important;
             }
             
-            .logo-image {
+            .header-image {
                 width: 24px !important;
                 height: 24px !important;
             }
@@ -82,10 +82,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <div class="logo-text">
-                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
-                    <span>Frontend és Design</span>
-                </div>
+                <img src="főkép.jpg" alt="Főkép" class="header-image" onclick="scrollToTop()" style="cursor: pointer;">
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">HOME</a>
@@ -382,7 +379,6 @@
         <i class="fi fi-rr-angle-up"></i>
     </button>
 
-    <!-- <script src="script.js"></script> -->
     <script src="blog.js"></script>
     
     <style>
@@ -559,13 +555,6 @@
                 mobileMenuBtn.addEventListener('click', function() {
                     nav.classList.toggle('active');
                     
-                    // Change hamburger icon to X when open
-                    const icon = this.querySelector('i');
-                    if (nav.classList.contains('active')) {
-                        // Flaticon icons don't need class toggling
-                    } else {
-                        // Flaticon icons don't need class toggling
-                    }
                 });
                 
                 // Close mobile menu when clicking on a link
@@ -573,8 +562,6 @@
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
                         nav.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        // Flaticon icons don't need class toggling
                     });
                 });
                 
@@ -582,8 +569,6 @@
                 document.addEventListener('click', function(e) {
                     if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                         nav.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        // Flaticon icons don't need class toggling
                     }
                 });
             }
@@ -608,6 +593,24 @@
                 });
             }
         });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>

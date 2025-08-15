@@ -117,33 +117,8 @@ if (ctaButton && projectsSection) {
     });
 }
 
-// Mobile menu functionality - REMOVED (handled by inline JS in HTML)
 
-// Typing effect for hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    
-    type();
-}
 
-// Initialize typing effect on page load (DISABLED - conflicts with inline animation)
-// window.addEventListener('load', function() {
-//     const heroTitle = document.querySelector('.hero-title');
-//     const currentText = heroTitle.innerHTML;
-//     
-//     setTimeout(() => {
-//         typeWriter(heroTitle, currentText, 50);
-//     }, 500);
-// });
 
 // Parallax effect for hero section
 window.addEventListener('scroll', function() {
@@ -179,13 +154,6 @@ document.querySelectorAll('.cta-button, .view-all-btn').forEach(btn => {
     });
 });
 
-// Console welcome message
-console.log(`
-🚀 Roland Portfolio Website
-💻 Modern Dark Theme with Cyan Accents
-🎨 Designed with attention to detail
-📧 Contact: roland@example.com
-`);
 
 // Performance optimization: Lazy load images when implemented
 function lazyLoadImages() {

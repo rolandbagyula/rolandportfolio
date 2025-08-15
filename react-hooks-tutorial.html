@@ -21,6 +21,19 @@
             gap: 0.8rem !important;
         }
         
+        .header-image {
+            width: 28px !important;
+            height: 28px !important;
+            border-radius: 50% !important;
+            transition: all 0.3s ease !important;
+            object-fit: cover !important;
+        }
+        
+        .header-image:hover {
+            transform: scale(1.05) !important;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4) !important;
+        }
+        
         .logo-text h2 {
             margin: 0 !important;
             font-size: 1.5rem !important;
@@ -310,10 +323,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <div class="logo-text">
-                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
-                    <span>Frontend és Design</span>
-                </div>
+                <img src="főkép.jpg" alt="Főkép" class="header-image" onclick="scrollToTop()" style="cursor: pointer;">
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">HOME</a>
@@ -603,13 +613,6 @@ useEffect(() =&gt; {
                 mobileMenuBtn.addEventListener('click', function() {
                     nav.classList.toggle('active');
                     
-                    // Change hamburger icon to X when open
-                    const icon = this.querySelector('i');
-                    if (nav.classList.contains('active')) {
-                        // Flaticon icons don't need class toggling
-                    } else {
-                        // Flaticon icons don't need class toggling
-                    }
                 });
                 
                 // Close mobile menu when clicking on a link
@@ -617,8 +620,6 @@ useEffect(() =&gt; {
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
                         nav.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        // Flaticon icons don't need class toggling
                     });
                 });
                 
@@ -626,8 +627,6 @@ useEffect(() =&gt; {
                 document.addEventListener('click', function(e) {
                     if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                         nav.classList.remove('active');
-                        const icon = mobileMenuBtn.querySelector('i');
-                        // Flaticon icons don't need class toggling
                     }
                 });
             }
