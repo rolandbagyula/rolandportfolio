@@ -25,12 +25,14 @@ document.querySelectorAll('.nav-link').forEach(link => {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(26, 26, 26, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        header.style.background = 'rgba(26, 26, 26, 0.95)';
-        header.style.boxShadow = 'none';
+    if (header) {
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(26, 26, 26, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            header.style.background = 'rgba(26, 26, 26, 0.95)';
+            header.style.boxShadow = 'none';
+        }
     }
 });
 
@@ -102,13 +104,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // CTA Button click handler
-document.querySelector('.cta-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('#projects').scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+const ctaButton = document.querySelector('.cta-button');
+const projectsSection = document.querySelector('#projects');
+
+if (ctaButton && projectsSection) {
+    ctaButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        projectsSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
     });
-});
+}
 
 // Mobile menu functionality - REMOVED (handled by inline JS in HTML)
 
@@ -205,20 +212,22 @@ document.addEventListener('DOMContentLoaded', lazyLoadImages);
 document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTop');
     
-    // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopBtn.classList.add('show');
-        } else {
-            backToTopBtn.classList.remove('show');
-        }
-    });
-    
-    // Smooth scroll to top when clicked
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (backToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
         });
-    });
+        
+        // Smooth scroll to top when clicked
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

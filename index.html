@@ -7,9 +7,10 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Roland Portfolio - Webfejleszto</title>
+    <meta name="description" content="Roland webfejlesztő portfoliója. Modern weboldalak, React alkalmazások és kreatív megoldások. Lépj kapcsolatba a projektjeidhez!">
     <link rel="stylesheet" href="styles.css?v=1.7">
-    <link href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
     <style>
         /* Global font family - Inter for minimal design */
         * {
@@ -218,23 +219,23 @@
             }
         }
         
-        /* Logo styling */
+        /* Header image styling */
         .logo {
             display: flex !important;
             align-items: center !important;
             gap: 0.8rem !important;
         }
         
-        .logo-image {
-            width: 28px !important;
-            height: 28px !important;
-            border-radius: 50% !important;
+        .header-image {
+            height: 40px !important;
+            width: auto !important;
+            border-radius: 8px !important;
             transition: all 0.3s ease !important;
             object-fit: cover !important;
         }
         
-        .logo-image:hover {
-            transform: scale(1.15) rotate(5deg) !important;
+        .header-image:hover {
+            transform: scale(1.05) !important;
             box-shadow: 0 4px 15px rgba(0, 212, 170, 0.4) !important;
         }
         
@@ -890,6 +891,14 @@
                 });
             }
         });
+        
+        // Scroll to top function for header image
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </head>
 <body>
@@ -897,10 +906,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <div class="logo-text">
-                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
-                    <span>Frontend és Design</span>
-                </div>
+                <img src="főkép.jpg" alt="Főkép" class="header-image" onclick="scrollToTop()" style="cursor: pointer;">
             </div>
             <nav class="nav">
                 <a href="#home" class="nav-link">HOME</a>
@@ -1200,18 +1206,18 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form>
+                    <form action="/api/contact" method="POST" id="contactForm">
                         <div class="form-group">
-                            <input type="text" placeholder="Neved" required>
+                            <input type="text" name="name" id="name" placeholder="Neved" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email címed" required>
+                            <input type="email" name="email" id="email" placeholder="Email címed" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Tárgy" required>
+                            <input type="text" name="subject" id="subject" placeholder="Tárgy" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Üzeneted" rows="5" required></textarea>
+                            <textarea name="message" id="message" placeholder="Üzeneted" rows="5" required></textarea>
                         </div>
                         <div style="
                             width: 100%;

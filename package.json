@@ -1,0 +1,23 @@
+{
+  "name": "roland-portfolio",
+  "version": "1.0.0",
+  "description": "Roland's modern portfolio website with Python backend and Node.js build tools",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python flask_server.py",
+    "build": "node build.js",
+    "optimize": "python optimize_images.py && npm run minify",
+    "minify": "node minify.js",
+    "serve": "python -m http.server 8000",
+    "deploy": "python deploy.py"
+  },
+  "keywords": ["portfolio", "flask", "python", "nodejs"],
+  "author": "Roland",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "uglify-js": "^3.17.4",
+    "clean-css": "^5.3.2",
+    "html-minifier": "^4.0.0"
+  }
+}
