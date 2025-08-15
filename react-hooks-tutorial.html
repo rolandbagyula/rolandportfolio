@@ -4,13 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React Hooks: A Modern Fejlesztés Alapjai - RNDev Blog</title>
-    <link rel="stylesheet" href="styles.css?v=1.4">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.7">
+    <link href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Global font family - Inter for minimal design */
         * {
             font-family: 'Inter', sans-serif !important;
+        }
+        
+        /* Logo styling for tutorial */
+        .logo {
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.8rem !important;
+        }
+        
+        .logo-text h2 {
+            margin: 0 !important;
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: #ffffff !important;
+        }
+        
+        .logo-text span {
+            font-size: 0.8rem !important;
+            color: #00d4aa !important;
+            font-weight: 400 !important;
+        }
+        
+        .logo-white, .logo-cyan {
+            font-size: inherit !important;
+            font-weight: inherit !important;
+            font-family: inherit !important;
+        }
+        
+        .logo-white {
+            color: #ffffff !important;
+        }
+        
+        .logo-cyan {
+            color: #00d4aa !important;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text h2 {
+                font-size: 1.3rem !important;
+            }
+            
+            .logo-text span {
+                font-size: 0.7rem !important;
+            }
         }
         
         /* Article specific styles */
@@ -109,6 +153,155 @@
             margin: 1.5rem 0;
             border-radius: 0 8px 8px 0;
         }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none !important;
+            color: #ffffff !important;
+            font-size: 1.5rem !important;
+            cursor: pointer !important;
+            transition: color 0.3s ease !important;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: #00bfa5 !important;
+        }
+        
+        /* Mobile Navigation */
+        @media screen and (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block !important;
+            }
+            
+            .nav {
+                position: fixed !important;
+                top: 70px !important;
+                left: -100% !important;
+                width: 100% !important;
+                height: calc(100vh - 70px) !important;
+                background: rgba(26, 26, 26, 0.98) !important;
+                backdrop-filter: blur(10px) !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                align-items: center !important;
+                padding-top: 3rem !important;
+                gap: 2rem !important;
+                transition: left 0.3s ease !important;
+                z-index: 999 !important;
+                overflow-y: auto !important;
+            }
+            
+            .nav.active {
+                left: 0 !important;
+                transform: translateX(0) !important;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem !important;
+                padding: 1rem 0 !important;
+                width: 100% !important;
+                text-align: center !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed !important;
+            bottom: 30px !important;
+            right: 30px !important;
+            width: 55px !important;
+            height: 55px !important;
+            background: #00d4aa !important;
+            color: #0a0a0a !important;
+            border: none !important;
+            border-radius: 50% !important;
+            font-size: 1.4rem !important;
+            cursor: pointer !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(30px) !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.4) !important;
+            border: 2px solid rgba(0, 212, 170, 0.3) !important;
+            z-index: 1000 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .back-to-top i {
+            font-size: 1.4rem !important;
+            color: #0a0a0a !important;
+            line-height: 1 !important;
+            display: block !important;
+        }
+        
+        .back-to-top.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+            animation: backToTopPulse 0.6s ease-out !important;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.1) !important;
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.6) !important;
+            background: #00bfa5 !important;
+            border-color: rgba(0, 212, 170, 0.6) !important;
+        }
+        
+        .back-to-top:active {
+            transform: translateY(-4px) scale(1.1) !important;
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.5) !important;
+        }
+        
+        @keyframes backToTopPulse {
+            0% {
+                transform: translateY(30px) scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-5px) scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 25px !important;
+                right: 25px !important;
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.1rem !important;
+            }
+        }
+        
+        /* Flaticon visibility fix */
+        .mobile-menu-btn i {
+            font-size: 1.5rem !important;
+            color: #00d4aa !important;
+            display: block !important;
+            line-height: 1 !important;
+        }
+        
+        .back-to-top i {
+            font-size: 1.4rem !important;
+            color: #0a0a0a !important;
+            display: block !important;
+            line-height: 1 !important;
+        }
+        
+        .back-to-blog i {
+            font-size: 1.2rem !important;
+            color: #ffffff !important;
+            display: inline-block !important;
+            margin-right: 0.5rem !important;
+        }
     </style>
 </head>
 <body>
@@ -116,8 +309,10 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h2>ROLAND</h2>
-                <span>Frontend és Design</span>
+                <div class="logo-text">
+                    <h2><span class="logo-white">RN</span><span class="logo-cyan">Dev</span></h2>
+                    <span>Frontend és Design</span>
+                </div>
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">HOME</a>
@@ -127,13 +322,16 @@
                 <a href="blog.html" class="nav-link">BLOG</a>
                 <a href="index.html#contact" class="nav-link">KAPCSOLAT</a>
             </nav>
+            <div class="mobile-menu-btn">
+                <i class="fi fi-rr-menu-burger"></i>
+            </div>
         </div>
     </header>
 
     <!-- Article Content -->
     <main class="article-container" style="margin-top: 120px;">
         <a href="blog.html" class="back-to-blog">
-            <i class="fas fa-arrow-left"></i>
+            <i class="fi fi-rr-angle-left"></i>
             Vissza a bloghoz
         </a>
         
@@ -142,15 +340,15 @@
                 <h1 class="article-title">React Hooks: A Modern Fejlesztés Alapjai</h1>
                 <div class="article-meta">
                     <span>
-                        <i class="fas fa-calendar"></i>
+                        📅
                         2025. Jan 12.
                     </span>
                     <span>
-                        <i class="fas fa-clock"></i>
+                        ⏰
                         8 perc olvasás
                     </span>
                     <span>
-                        <i class="fas fa-user"></i>
+                        👤
                         Roland
                     </span>
                 </div>
@@ -386,5 +584,73 @@ useEffect(() =&gt; {
             <p>&copy; 2025 Roland. Minden jog fenntartva.</p>
         </div>
     </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" title="Vissza az oldal tetejére">
+        <i class="fi fi-rr-angle-up"></i>
+    </button>
+    
+    <script>
+        // Mobile Menu and Back to Top functionality for tutorial page
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('.nav');
+            
+            // Mobile menu toggle
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    
+                    // Change hamburger icon to X when open
+                    const icon = this.querySelector('i');
+                    if (nav.classList.contains('active')) {
+                        // Flaticon icons don't need class toggling
+                    } else {
+                        // Flaticon icons don't need class toggling
+                    }
+                });
+                
+                // Close mobile menu when clicking on a link
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        nav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        // Flaticon icons don't need class toggling
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        nav.classList.remove('active');
+                        const icon = mobileMenuBtn.querySelector('i');
+                        // Flaticon icons don't need class toggling
+                    }
+                });
+            }
+            
+            // Back to Top Button functionality
+            if (backToTopBtn) {
+                // Show/hide button based on scroll position
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                
+                // Smooth scroll to top when clicked
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

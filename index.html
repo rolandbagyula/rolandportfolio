@@ -8,7 +8,7 @@
     <meta http-equiv="Expires" content="0">
     <title>Roland Portfolio - Webfejleszto</title>
     <link rel="stylesheet" href="styles.css?v=1.7">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Global font family - Inter for minimal design */
@@ -292,7 +292,7 @@
             border: 2px solid rgba(0, 212, 170, 0.3) !important;
             border-radius: 50% !important;
             cursor: pointer !important;
-            font-size: 1.3rem !important;
+            font-size: 1.4rem !important;
             font-weight: bold !important;
             box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4) !important;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -301,6 +301,16 @@
             visibility: hidden !important;
             transform: translateY(30px) scale(0.8) !important;
             backdrop-filter: blur(10px) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        
+        .back-to-top i {
+            font-size: 1.4rem !important;
+            color: #0a0a0a !important;
+            line-height: 1 !important;
+            display: block !important;
         }
         
         .back-to-top.show {
@@ -743,6 +753,37 @@
                 font-size: 0.8rem !important;
             }
         }
+        
+        /* Flaticon visibility fix */
+        .service-icon i {
+            font-size: 2.5rem !important;
+            color: #ffffff !important;
+            display: block !important;
+            line-height: 1 !important;
+            text-align: center !important;
+        }
+        
+        .image-placeholder i {
+            font-size: 2.5rem !important;
+            color: #ffffff !important;
+            display: block !important;
+            line-height: 1 !important;
+            text-align: center !important;
+        }
+        
+        .service-icon, .image-placeholder {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 80px !important;
+        }
+        
+        .back-to-top i {
+            font-size: 1.4rem !important;
+            color: #0a0a0a !important;
+            display: block !important;
+            line-height: 1 !important;
+        }
     </style>
     
     <script>
@@ -793,8 +834,7 @@
                         if (mobileMenuBtn) {
                             const icon = mobileMenuBtn.querySelector('i');
                             if (icon) {
-                                icon.classList.remove('fa-times');
-                                icon.classList.add('fa-bars');
+                                // Flaticon icons don't need class toggling
                             }
                         }
                     }
@@ -820,8 +860,7 @@
                 if (!nav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     nav.classList.remove('active');
                     const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                    // Flaticon icons don't need class toggling
                 }
             });
             
@@ -908,7 +947,7 @@
             <div class="about-content">
                 <div class="about-image">
                     <div class="image-placeholder">
-                        <i class="fas fa-user"></i>
+                        👤
                     </div>
                 </div>
                 <div class="about-text">
@@ -923,7 +962,7 @@
                     <div class="skills">
                         <div class="skill-item">
                             <div class="skill-icon">
-                                <i class="fas fa-code"></i>
+                                💻
                             </div>
                             <div class="skill-content">
                                 <h4>Clean Code</h4>
@@ -933,7 +972,7 @@
                         
                         <div class="skill-item">
                             <div class="skill-icon">
-                                <i class="fas fa-palette"></i>
+                                🎨
                             </div>
                             <div class="skill-content">
                                 <h4>Modern Design</h4>
@@ -963,7 +1002,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fi fi-rr-laptop"></i>
                     </div>
                     <h3>Weboldal Tervezés</h3>
                     <p>Modern és reszponzív weboldalak tervezése és fejlesztése.</p>
@@ -971,7 +1010,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fi fi-rr-smartphone"></i>
                     </div>
                     <h3>Mobil & Asztali App</h3>
                     <p>Reszponzív alkalmazások minden eszközre optimalizálva.</p>
@@ -979,7 +1018,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                        <i class="fi fi-rr-palette"></i>
                     </div>
                     <h3>UI & UX Tervezés</h3>
                     <p>Felhasználóbarát interfészek és élmények tervezése.</p>
@@ -987,7 +1026,7 @@
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-camera"></i>
+                        <i class="fi fi-rr-camera"></i>
                     </div>
                     <h3>Képszerkesztés</h3>
                     <p>Professzionális képszerkesztés és grafikai munkák.</p>
@@ -1013,18 +1052,18 @@
                 <article class="post-card">
                     <div class="post-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-globe"></i>
+                            🌐
                         </div>
                         <div class="post-category">Webfejlesztés</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
                             <span class="post-date">
-                                <i class="fas fa-calendar"></i>
+                                <i class="fi fi-rr-calendar"></i>
                                 2024. Dec 15.
                             </span>
                             <span class="post-read-time">
-                                <i class="fas fa-eye"></i>
+                                <i class="fi fi-rr-eye"></i>
                                 Élő Demo
                             </span>
                         </div>
@@ -1039,7 +1078,7 @@
                         </div>
                         <a href="#" class="read-more">
                             Projekt megtekintése
-                            <i class="fas fa-external-link-alt"></i>
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -1047,18 +1086,18 @@
                 <article class="post-card">
                     <div class="post-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fi fi-rr-smartphone"></i>
                         </div>
                         <div class="post-category">Mobil App</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
                             <span class="post-date">
-                                <i class="fas fa-calendar"></i>
+                                <i class="fi fi-rr-calendar"></i>
                                 2024. Nov 28.
                             </span>
                             <span class="post-read-time">
-                                <i class="fas fa-eye"></i>
+                                <i class="fi fi-rr-eye"></i>
                                 Élő Demo
                             </span>
                         </div>
@@ -1073,7 +1112,7 @@
                         </div>
                         <a href="#" class="read-more">
                             Projekt megtekintése
-                            <i class="fas fa-external-link-alt"></i>
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -1081,18 +1120,18 @@
                 <article class="post-card">
                     <div class="post-image">
                         <div class="image-placeholder">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fi fi-rr-stats"></i>
                         </div>
                         <div class="post-category">Irányítópult</div>
                     </div>
                     <div class="post-content">
                         <div class="post-meta">
                             <span class="post-date">
-                                <i class="fas fa-calendar"></i>
+                                <i class="fi fi-rr-calendar"></i>
                                 2024. Oct 10.
                             </span>
                             <span class="post-read-time">
-                                <i class="fas fa-eye"></i>
+                                <i class="fi fi-rr-eye"></i>
                                 Élő Demo
                             </span>
                         </div>
@@ -1107,7 +1146,7 @@
                         </div>
                         <a href="#" class="read-more">
                             Projekt megtekintése
-                            <i class="fas fa-external-link-alt"></i>
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -1130,7 +1169,7 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                                ✉️
                             </div>
                             <div class="contact-text">
                                 <h4>Email</h4>
@@ -1140,7 +1179,7 @@
                         
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                                📞
                             </div>
                             <div class="contact-text">
                                 <h4>Telefon</h4>
@@ -1150,7 +1189,7 @@
                         
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                                📍
                             </div>
                             <div class="contact-text">
                                 <h4>Helyszín</h4>
@@ -1215,7 +1254,7 @@
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Vissza az oldal tetejére">
-        <i class="fas fa-chevron-up"></i>
+        <i class="fi fi-rr-angle-up"></i>
     </button>
 
     <script src="script.js?v=1.6"></script>
