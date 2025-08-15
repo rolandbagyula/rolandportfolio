@@ -421,6 +421,23 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        background: #444;
+        padding: 15px;
+        border-radius: 8px;
+        max-height: 70vh;     /* maximum 70% a képernyőből */
+        overflow-y: auto;     /* ha hosszabb, akkor lehessen görgetni */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    
     .nav {
         display: none;
     }
