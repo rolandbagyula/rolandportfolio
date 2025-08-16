@@ -75,9 +75,287 @@
                 height: 24px !important;
             }
         }
+        
+        /* Enhanced CTA Button Styles */
+        .cta-button {
+            display: inline-block !important;
+            padding: 20px 40px !important;
+            background: linear-gradient(135deg, #00d4aa, #00b894) !important;
+            color: white !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            letter-spacing: 1.2px !important;
+            text-transform: uppercase !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            border: 2px solid transparent !important;
+            position: relative !important;
+            overflow: hidden !important;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3) !important;
+            transform: translateY(0) !important;
+        }
+        
+        .cta-primary {
+            font-size: 1.2rem !important;
+            padding: 22px 45px !important;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.4) !important;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.5) !important;
+            background: linear-gradient(135deg, #00b894, #00a085) !important;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-5px) scale(1.03) !important;
+            box-shadow: 0 25px 50px rgba(0, 212, 170, 0.6) !important;
+        }
+        
+        /* Enhanced Section Titles */
+        .section-title-enhanced {
+            font-size: 2.8rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 2rem !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        /* Micro-animations */
+        .post-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.2) !important;
+        }
+        
+        /* Enhanced button interactions */
+        .cta-button::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+            transition: left 0.6s ease !important;
+        }
+        
+        .cta-button:hover::before {
+            left: 100% !important;
+        }
+        
+        /* Accessibility - Focus states */
+        .cta-button:focus, .nav-link:focus, input:focus, textarea:focus, button:focus {
+            outline: 3px solid #00d4aa !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.3) !important;
+        }
+        
+        .mobile-menu-btn:focus {
+            outline: 2px solid #00d4aa !important;
+            outline-offset: 2px !important;
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute !important;
+            top: -40px !important;
+            left: 6px !important;
+            background: #00d4aa !important;
+            color: white !important;
+            padding: 8px !important;
+            text-decoration: none !important;
+            border-radius: 4px !important;
+            z-index: 1000 !important;
+            transition: top 0.3s !important;
+        }
+        
+        .skip-link:focus {
+            top: 6px !important;
+        }
+        
+        /* Mobile UX Optimizations */
+        @media (max-width: 768px) {
+            .section-title-enhanced {
+                font-size: 2.2rem !important;
+            }
+            
+            /* Touch targets minimum 44px */
+            .cta-button, .nav-link, .mobile-menu-btn, .back-to-top {
+                min-height: 44px !important;
+                min-width: 44px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .mobile-menu-btn {
+                padding: 12px !important;
+                font-size: 1.5rem !important;
+            }
+            
+            /* Enhanced mobile animations */
+            .post-card:active {
+                transform: scale(0.95) !important;
+                transition: transform 0.1s ease !important;
+            }
+            
+            /* Mobile menu animation enhancement */
+            .nav.active {
+                animation: slideDown 0.3s ease-out !important;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Override blog card styles to match project cards exactly */
+        .post-card {
+            background: #1a1a1a !important;
+            border-radius: 15px !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            height: auto !important;
+            max-width: 100% !important;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.1) !important;
+        }
+        
+        .post-image {
+            height: 180px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .image-placeholder {
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 2.5rem !important;
+            color: #00d4aa !important;
+        }
+        
+        .post-category {
+            position: absolute !important;
+            top: 1rem !important;
+            right: 1rem !important;
+            background: #00d4aa !important;
+            color: #0a0a0a !important;
+            padding: 0.3rem 0.8rem !important;
+            border-radius: 20px !important;
+            font-size: 0.8rem !important;
+            font-weight: 600 !important;
+        }
+        
+        .post-content {
+            padding: 1.2rem !important;
+        }
+        
+        .post-meta {
+            display: flex !important;
+            justify-content: space-between !important;
+            margin-bottom: 0.8rem !important;
+            font-size: 0.8rem !important;
+            color: #888 !important;
+        }
+        
+        .post-title {
+            color: white !important;
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+            margin-bottom: 0.8rem !important;
+            line-height: 1.4 !important;
+        }
+        
+        .post-excerpt {
+            color: #ccc !important;
+            font-size: 0.85rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 1rem !important;
+        }
+        
+        .post-tags {
+            display: flex !important;
+            gap: 0.3rem !important;
+            margin-bottom: 1rem !important;
+            flex-wrap: wrap !important;
+        }
+        
+        .tag {
+            background: rgba(0, 212, 170, 0.1) !important;
+            color: #00d4aa !important;
+            padding: 0.2rem 0.6rem !important;
+            font-size: 0.7rem !important;
+            font-weight: 500 !important;
+            border-radius: 12px !important;
+            border: 1px solid rgba(0, 212, 170, 0.2) !important;
+        }
+        
+        .read-more {
+            color: #00d4aa !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 0.85rem !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+            transition: all 0.3s ease !important;
+        }
+        
+        .read-more:hover {
+            gap: 0.8rem !important;
+            color: #00b894 !important;
+        }
+        
+        /* Blog grid layout to match projects */
+        .posts-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 2rem !important;
+            margin-top: 3rem !important;
+        }
+        
+        /* Remove featured card special styling */
+        .post-card.featured {
+            grid-column: span 1 !important;
+            display: block !important;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .posts-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Ugrás a tartalomhoz</a>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -99,6 +377,7 @@
     </header>
 
     <!-- Blog Hero Section -->
+    <main id="main">
     <section class="blog-hero">
         <div class="container">
             <div class="blog-hero-content">
@@ -128,7 +407,7 @@
     <!-- Blog Posts Grid -->
     <section class="blog-posts">
         <div class="container">
-            <div class="posts-grid">
+            <div class="posts-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 2rem !important; margin-top: 3rem !important;">
                 <!-- Featured Post -->
                 <article class="post-card featured" data-category="javascript">
                     <div class="post-image">
@@ -144,8 +423,8 @@
                                 2025. Jan 15.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                5 perc olvasás
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h2 class="post-title">Modern JavaScript ES2024 Újdonságok</h2>
@@ -158,8 +437,8 @@
                             <span class="tag">Frontend</span>
                         </div>
                         <a href="javascript-es2024.html" class="read-more">
-                            Tovább olvasom
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -179,8 +458,8 @@
                                 2025. Jan 12.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                3 perc
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h3 class="post-title">React Hooks: A Modern Fejlesztés Alapjai</h3>
@@ -195,8 +474,8 @@
                             <span class="tag">Custom Hooks</span>
                         </div>
                         <a href="react-hooks-tutorial.html" class="read-more">
-                            Teljes cikk elolvasása
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -215,8 +494,8 @@
                                 2025. Jan 10.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                4 perc
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h3 class="post-title">CSS Grid vs Flexbox: Mikor Mit Használj?</h3>
@@ -229,8 +508,8 @@
                             <span class="tag">Layout</span>
                         </div>
                         <a href="css-grid-flexbox.html" class="read-more">
-                            Tovább olvasom
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -249,8 +528,8 @@
                                 2025. Jan 8.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                2 perc
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h3 class="post-title">5 VS Code Kiegészítő Minden Fejlesztőnek</h3>
@@ -263,8 +542,8 @@
                             <span class="tag">Produktivitás</span>
                         </div>
                         <a href="vscode-extensions.html" class="read-more">
-                            Tovább olvasom
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -283,8 +562,8 @@
                                 2025. Jan 5.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                6 perc
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h3 class="post-title">Aszinkron JavaScript: Promise vs Async/Await</h3>
@@ -297,8 +576,8 @@
                             <span class="tag">Promise</span>
                         </div>
                         <a href="async-javascript.html" class="read-more">
-                            Tovább olvasom
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -317,8 +596,8 @@
                                 2025. Jan 3.
                             </span>
                             <span class="post-read-time">
-                                <i class="fi fi-rr-clock"></i>
-                                4 perc
+                                <i class="fi fi-rr-eye"></i>
+                                Élő Demo
                             </span>
                         </div>
                         <h3 class="post-title">Reszponzív Design: Mobile-First Megközelítés</h3>
@@ -331,8 +610,8 @@
                             <span class="tag">Mobile</span>
                         </div>
                         <a href="responsive-design.html" class="read-more">
-                            Tovább olvasom
-                            <i class="fi fi-rr-arrow-right"></i>
+                            Projekt megtekintése
+                            <i class="fi fi-rr-link"></i>
                         </a>
                     </div>
                 </article>
@@ -373,6 +652,7 @@
             <p>&copy; 2025 RNDev. Minden jog fenntartva.</p>
         </div>
     </footer>
+    </main>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Vissza az oldal tetejére">

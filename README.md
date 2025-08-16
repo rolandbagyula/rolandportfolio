@@ -1,6 +1,6 @@
 # 🌟 Roland Portfolio Website
 
-Modern, responsive portfolio website for a Frontend Developer with dark theme and cyan accents.
+Modern, responsive portfolio website for a Frontend Developer with dark theme and cyan accents. Fully optimized for UI/UX with enhanced accessibility and mobile experience.
 
 ## 🚀 Live Demo
 
@@ -10,12 +10,14 @@ Modern, responsive portfolio website for a Frontend Developer with dark theme an
 
 - 🎨 **Modern Dark Theme** with cyan accent colors (#00d4aa)
 - 📱 **Fully Responsive** design (mobile, tablet, desktop)
-- ⚡ **Smooth Animations** and hover effects
-- 🔄 **Interactive Navigation** with smooth scrolling
-- 📝 **Blog System** with category filtering
+- ⚡ **Enhanced Animations** - micro-interactions and smooth hover effects
+- 🔄 **Interactive Navigation** with smooth scrolling and mobile menu
+- 📝 **Blog System** with category filtering and unified card design
 - 💼 **Project Showcase** with 3-column grid layout
 - ⬆️ **Back to Top Button** with pulse animation
-- 🎯 **SEO Optimized** and fast loading
+- 🎯 **SEO & Accessibility Optimized** - ARIA labels, focus states, skip links
+- 📱 **Mobile UX Enhanced** - 44px touch targets, gesture support
+- ✨ **UI/UX Optimized** - visual hierarchy, enhanced CTA buttons
 
 ## 🛠️ Technologies Used
 
@@ -29,11 +31,14 @@ Modern, responsive portfolio website for a Frontend Developer with dark theme an
 
 ```
 roland-portfolio/
-├── index.html              # Main homepage
-├── blog.html               # Blog section
-├── react-hooks-tutorial.html # Sample blog post
-├── styles.css              # Main stylesheet
-├── script.js               # JavaScript functionality
+├── index.html              # Main homepage with optimized UI/UX
+├── blog.html               # Blog section with unified card design
+├── react-hooks-tutorial.html # Sample blog post with enhanced accessibility
+├── styles.css              # Main stylesheet with responsive design
+├── script.js               # JavaScript functionality (optimized)
+├── build.js                # Build script for optimization
+├── flask_server.py         # Python backend server
+├── főkép.jpg               # Logo image
 └── README.md               # Project documentation
 ```
 
@@ -55,10 +60,13 @@ roland-portfolio/
 ## 🎨 Design Features
 
 - **Color Scheme**: Dark background (#0a0a0a) with cyan accents (#00d4aa)
-- **Typography**: Poppins font family for modern look
-- **Animations**: Smooth transitions and hover effects
+- **Typography**: Inter font family for clean, modern look
+- **Animations**: Enhanced micro-interactions, shimmer effects, smooth transitions
 - **Layout**: CSS Grid and Flexbox for responsive design
-- **Icons**: Font Awesome for consistent iconography
+- **Icons**: Flaticon for consistent iconography
+- **Cards**: Unified design across blog and project sections
+- **Buttons**: Enhanced CTA buttons with improved visual hierarchy
+- **Accessibility**: Focus states, skip links, ARIA labels for screen readers
 
 ## 📱 Responsive Breakpoints
 
@@ -84,6 +92,29 @@ roland-portfolio/
    python -m http.server 8000
    # Visit http://localhost:8000
    ```
+
+4. **Build optimized version**
+   ```bash
+   node build.js
+   # Creates optimized files in dist/ folder
+   ```
+
+## 🎯 UI/UX Optimizations
+
+### ✨ Recent Enhancements
+- **Visual Hierarchy**: Enhanced CTA buttons with improved sizing and shadows
+- **Micro-animations**: Smooth hover effects on cards and interactive elements
+- **Accessibility**: Focus states, skip links, ARIA labels for better screen reader support
+- **Mobile UX**: 44px minimum touch targets, enhanced mobile animations
+- **Card Consistency**: Unified design between blog and project cards
+- **Responsive Grid**: 3-column layout on desktop, 2-column on tablet, 1-column on mobile
+
+### 🎨 Design System
+- **Primary Color**: #00d4aa (Cyan)
+- **Background**: #0a0a0a (Dark)
+- **Card Background**: #1a1a1a
+- **Text**: White (#ffffff) and Light Gray (#ccc)
+- **Borders**: rgba(255, 255, 255, 0.1)
 
 ## 🌐 Deployment
 

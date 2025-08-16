@@ -58,9 +58,14 @@
         }
         
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05) !important;
-            box-shadow: 0 0 30px rgba(0, 212, 170, 0.6) !important;
-            background: linear-gradient(45deg, #00bfa5, #00d4aa) !important;
+            transform: translateY(-4px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(0, 212, 170, 0.5) !important;
+            background: linear-gradient(135deg, #00b894, #00a085) !important;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-5px) scale(1.03) !important;
+            box-shadow: 0 25px 50px rgba(0, 212, 170, 0.6) !important;
         }
         
         .cta-button:active {
@@ -581,24 +586,159 @@
         
         /* Modern Submit Button - Enhanced Specificity */
         .contact-form .modern-submit-btn,
-        button.submit-btn.modern-submit-btn {
-            width: 100% !important;
-            padding: 1.4rem 2.5rem !important;
-            background: linear-gradient(45deg, #00d4aa, #00bfa5) !important;
-            color: #0a0a0a !important;
-            border: 2px solid transparent !important;
-            border-radius: 15px !important;
-            font-family: 'Poppins', sans-serif !important;
-            font-size: 1.1rem !important;
+        .cta-button {
+            display: inline-block !important;
+            padding: 20px 40px !important;
+            background: linear-gradient(135deg, #00d4aa, #00b894) !important;
+            color: white !important;
+            text-decoration: none !important;
+            border-radius: 50px !important;
             font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            letter-spacing: 1.2px !important;
             text-transform: uppercase !important;
-            letter-spacing: 2px !important;
-            cursor: pointer !important;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            box-shadow: 0 10px 35px rgba(0, 212, 170, 0.5) !important;
+            border: 2px solid transparent !important;
             position: relative !important;
             overflow: hidden !important;
-            margin-top: 1rem !important;
+            box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3) !important;
+            transform: translateY(0) !important;
+        }
+        
+        .cta-primary {
+            font-size: 1.2rem !important;
+            padding: 22px 45px !important;
+            box-shadow: 0 10px 30px rgba(0, 212, 170, 0.4) !important;
+        }
+        
+        /* Enhanced Section Titles */
+        .section-title-enhanced {
+            font-size: 2.8rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 2rem !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .section-title-enhanced {
+                font-size: 2.2rem !important;
+            }
+        }
+        
+        /* Micro-animations */
+        .skill-item, .service-card, .post-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+        
+        .skill-item:hover, .service-card:hover, .post-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 35px rgba(0, 212, 170, 0.2) !important;
+        }
+        
+        /* Enhanced button interactions */
+        .cta-button::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: -100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+            transition: left 0.6s ease !important;
+        }
+        
+        .cta-button:hover::before {
+            left: 100% !important;
+        }
+        
+        /* Loading state animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .loading {
+            animation: pulse 1.5s ease-in-out infinite !important;
+        }
+        
+        /* Accessibility - Focus states */
+        .cta-button:focus, .nav-link:focus, input:focus, textarea:focus, button:focus {
+            outline: 3px solid #00d4aa !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.3) !important;
+        }
+        
+        .mobile-menu-btn:focus {
+            outline: 2px solid #00d4aa !important;
+            outline-offset: 2px !important;
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute !important;
+            top: -40px !important;
+            left: 6px !important;
+            background: #00d4aa !important;
+            color: white !important;
+            padding: 8px !important;
+            text-decoration: none !important;
+            border-radius: 4px !important;
+            z-index: 1000 !important;
+            transition: top 0.3s !important;
+        }
+        
+        .skip-link:focus {
+            top: 6px !important;
+        }
+        
+        /* Mobile UX Optimizations */
+        @media (max-width: 768px) {
+            /* Touch targets minimum 44px */
+            .cta-button, .nav-link, .mobile-menu-btn, .back-to-top {
+                min-height: 44px !important;
+                min-width: 44px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            .mobile-menu-btn {
+                padding: 12px !important;
+                font-size: 1.5rem !important;
+            }
+            
+            /* Enhanced mobile animations */
+            .skill-item:active, .service-card:active, .post-card:active {
+                transform: scale(0.95) !important;
+                transition: transform 0.1s ease !important;
+            }
+            
+            /* Swipe indicator for mobile */
+            .projects-grid::after {
+                content: 'Húzd jobbra a további projektekért' !important;
+                display: block !important;
+                text-align: center !important;
+                color: #666 !important;
+                font-size: 0.9rem !important;
+                margin-top: 1rem !important;
+                opacity: 0.7 !important;
+            }
+            
+            /* Mobile menu animation enhancement */
+            .nav.active {
+                animation: slideDown 0.3s ease-out !important;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .contact-form .modern-submit-btn::before,
@@ -872,6 +1012,7 @@
     </script>
 </head>
 <body>
+    <a href="#main" class="skip-link">Ugrás a tartalomhoz</a>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -893,6 +1034,7 @@
     </header>
 
     <!-- Hero Section -->
+    <main id="main">
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -904,10 +1046,10 @@
                     <p class="hero-description">
                         Modern, egyedi és reszponzív oldalakat készítek. Felesleges beszéd helyett nézd meg magad!
                     </p>
-                    <a href="#projects" class="cta-button">PROJEKTEK MEGTEKINTÉSE</a>
+                    <a href="#projects" class="cta-button cta-primary">PROJEKTEK MEGTEKINTÉSE</a>
                 </div>
                 <div class="hero-image">
-                    <div class="image-placeholder">
+                    <div class="image-placeholder" role="img" aria-label="Kód szimbólum">
                         &lt;/&gt;
                     </div>
                 </div>
@@ -920,13 +1062,13 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <div class="image-placeholder">
+                    <div class="image-placeholder" role="img" aria-label="Roland profilképe">
                         👤
                     </div>
                 </div>
                 <div class="about-text">
                     <div class="section-label">RÓLAM</div>
-                    <h2 class="section-title">KI <span class="highlight">VAGYOK?</span></h2>
+                    <h2 class="section-title section-title-enhanced">KI <span class="highlight">VAGYOK?</span></h2>
                     <p class="about-description">
                         Kreatív frontend fejlesztő vagyok, aki a modern webtechnológiákkal 
                         egyedi és funkcional oldalakat készít. Minden projektet szenvedéllyel 
@@ -964,7 +1106,7 @@
         <div class="container">
             <div class="services-header">
                 <div class="section-label">SZOLGÁLTATÁSAIM</div>
-                <h2 class="section-title">MIT <span class="highlight">CSINÁLOK?</span></h2>
+                <h2 class="section-title section-title-enhanced">MIT <span class="highlight">CSINÁLOK?</span></h2>
                 <p class="section-description">
                     Professzionális webfejlesztési szolgáltatásokat nyújtok, amelyek segítenek 
                     megvalósítani a digitális álmaidat. Modern technológiákkal és kreatív 
@@ -1015,7 +1157,7 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-label">PROJEKTEK</div>
-                <h2 class="section-title">LEGUTÓBBI <span class="highlight">MUNKÁK</span></h2>
+                <h2 class="section-title section-title-enhanced">LEGUTÓBBI <span class="highlight">MUNKÁK</span></h2>
                 <p class="section-description">
                     Íme néhány projekt, amelyeken dolgoztam. Minden projekt egyedi kihívásokat 
                     és kreatív megoldásokat tartalmaz.
@@ -1134,7 +1276,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="section-label">KAPCSOLAT</div>
-                    <h2 class="section-title">VEDD FEL A <span class="highlight">KAPCSOLATOT</span></h2>
+                    <h2 class="section-title section-title-enhanced">VEDD FEL A <span class="highlight">KAPCSOLATOT</span></h2>
                     <p class="contact-description">
                         Van egy projekted? Keress bátran! Szívesen segítek megvalósítani 
                         a digitális álmaidat.
@@ -1225,6 +1367,7 @@
             <p>&copy; 2025 Roland. Minden jog fenntartva.</p>
         </div>
     </footer>
+    </main>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" title="Vissza az oldal tetejére">
